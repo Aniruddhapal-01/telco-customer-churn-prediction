@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurnIQ | Customer Churn Prediction</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">C</div>
+                <div>
+                    <h2>ChurnIQ</h2>
+                    <p>Customer Intelligence</p>
+                </div>
+            </div>
+            <span class="status"><span></span> ML Dashboard</span>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div>
+                    <p class="eyebrow">PREDICTIVE ANALYTICS</p>
+                    <h1>Customer Churn Prediction</h1>
+                    <p class="subtitle">
+                        Analyze customer information and identify potential churn risk.
+                    </p>
+                </div>
+                <div class="hero-icon">↗</div>
+            </section>
+
+            <form id="churnForm">
+
+                <section class="form-card">
+                    <div class="section-heading">
+                        <div class="section-number">01</div>
+                        <div>
+                            <h2>Personal Information</h2>
+                            <p>Basic details about the customer</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="senior">Senior Citizen</label>
+                            <select id="senior" name="SeniorCitizen" required>
+                                <option value="">Select option</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="partner">Partner</label>
+                            <select id="partner" name="Partner" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="dependents">Dependents</label>
+                            <select id="dependents" name="Dependents" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-card">
+                    <div class="section-heading">
+                        <div class="section-number">02</div>
+                        <div>
+                            <h2>Account Information</h2>
+                            <p>Customer tenure and subscription details</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="tenure">Tenure (Months)</label>
+                            <input type="number" id="tenure" name="tenure"
+                                   min="0" max="100" placeholder="e.g. 24" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="contract">Contract</label>
+                            <select id="contract" name="Contract" required>
+                                <option value="">Select contract</option>
+                                <option value="Month-to-month">Month-to-month</option>
+                                <option value="One year">One year</option>
+                                <option value="Two year">Two year</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="paperless">Paperless Billing</label>
+                            <select id="paperless" name="PaperlessBilling" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="payment">Payment Method</label>
+                            <select id="payment" name="PaymentMethod" required>
+                                <option value="">Select payment method</option>
+                                <option value="Electronic check">Electronic check</option>
+                                <option value="Mailed check">Mailed check</option>
+                                <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                                <option value="Credit card (automatic)">Credit card (automatic)</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-card">
+                    <div class="section-heading">
+                        <div class="section-number">03</div>
+                        <div>
+                            <h2>Subscribed Services</h2>
+                            <p>Services currently used by the customer</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="phone">Phone Service</label>
+                            <select id="phone" name="PhoneService" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="multiple">Multiple Lines</label>
+                            <select id="multiple" name="MultipleLines" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No phone service">No phone service</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="internet">Internet Service</label>
+                            <select id="internet" name="InternetService" required>
+                                <option value="">Select option</option>
+                                <option value="DSL">DSL</option>
+                                <option value="Fiber optic">Fiber optic</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="security">Online Security</label>
+                            <select id="security" name="OnlineSecurity" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No internet service</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="backup">Online Backup</label>
+                            <select id="backup" name="OnlineBackup" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No internet service</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="device">Device Protection</label>
+                            <select id="device" name="DeviceProtection" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No internet service</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="tech">Tech Support</label>
+                            <select id="tech" name="TechSupport" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No internet service</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="tv">Streaming TV</label>
+                            <select id="tv" name="StreamingTV" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No internet service</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="movies">Streaming Movies</label>
+                            <select id="movies" name="StreamingMovies" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No internet service</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-card">
+                    <div class="section-heading">
+                        <div class="section-number">04</div>
+                        <div>
+                            <h2>Billing Information</h2>
+                            <p>Customer's monthly and total charges</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="monthly">Monthly Charges ( $ )</label>
+                            <input type="number" id="monthly" name="MonthlyCharges"
+                                   min="0" step="0.01" placeholder="e.g. 70.50" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="total">Total Charges ( $ )</label>
+                            <input type="number" id="total" name="TotalCharges"
+                                   min="0" step="0.01" placeholder="e.g. 1500.00" required>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="action-area">
+                    <button type="reset" class="reset-btn">Reset Form</button>
+                    <button type="submit" class="predict-btn">
+                        Predict Churn <span>→</span>
+                    </button>
+                </div>
+            </form>
+
+            
+    <section class="result-card" id="resultCard" hidden>
+
+<section class="dashboard-section" id="analyticsSection" hidden>
+
+    <div class="dashboard-heading">
+        <p class="eyebrow">CUSTOMER INTELLIGENCE</p>
+        <h2>Customer Analytics Dashboard</h2>
+        <p>Explore customer churn patterns in the original dataset.</p>
+    </div>
+
+    <div class="charts-grid">
+
+        <div class="chart-card">
+            <h3>Customer Churn Distribution</h3>
+            <p>Percentage of customers who stayed or left.</p>
+            <div class="chart-container">
+                <canvas id="churnChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3>Churn by Contract Type</h3>
+            <p>Compare churn and retention across contracts.</p>
+            <div class="chart-container">
+                <canvas id="contractChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3>Churn by Customer Tenure</h3>
+            <p>How churn changes with customer tenure.</p>
+            <div class="chart-container">
+                <canvas id="tenureChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3>Average Monthly Charges</h3>
+            <p>Compare average charges for churned and retained customers.</p>
+            <div class="chart-container">
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="explanation-section" id="explanationSection" hidden>
+
+    <div class="dashboard-heading">
+        <p class="eyebrow">MODEL INTERPRETABILITY</p>
+        <h2>Why Did the Model Make This Prediction?</h2>
+        <p>
+            Understand which customer attributes pushed the
+            prediction towards churn or staying.
+        </p>
+    </div>
+
+    <div class="chart-card explanation-card">
+
+        <h3>Individual Customer Feature Contributions</h3>
+
+        <p>
+            Positive contributions push towards churn.
+            Negative contributions push towards staying.
+        </p>
+
+        <div class="chart-container explanation-chart">
+            <canvas id="explanationChart"></canvas>
+        </div>
+
+        <div class="explanation-legend">
+            <span class="churn-legend">
+                <span></span> Pushes towards churn
+            </span>
+
+            <span class="stay-legend">
+                <span></span> Pushes towards staying
+            </span>
+        </div>
+
+        <p class="explanation-note">
+            SHAP values represent contributions to the model's
+            output, not percentage points of churn probability.
+        </p>
+
+    </div>
+
+</section>
+
+
+        <div class="result-icon" id="resultIcon">!</div>
+
+            <div>
+            <h3 id="resultTitle">Prediction Result</h3>
+            <p id="resultMessage"></p>
+            <p id="resultProbability"></p>
+            <p id="resultRisk"></p>
+        </div>
+    </section>
+
+<section class="dashboard-section" id="performanceSection" hidden>
+
+    <div class="dashboard-heading">
+        <p class="eyebrow">MODEL EVALUATION</p>
+        <h2>How Reliable Is the Model?</h2>
+        <p>
+            Performance measured on the held-out test dataset.
+        </p>
+    </div>
+
+    <div class="charts-grid">
+
+        <div class="chart-card">
+            <h3>Accuracy</h3>
+            <h2 id="accuracyValue">--</h2>
+            <p>Overall correct predictions</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>Precision</h3>
+            <h2 id="precisionValue">--</h2>
+            <p>How many predicted churners actually churned</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>Recall</h3>
+            <h2 id="recallValue">--</h2>
+            <p>How many actual churners were identified</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>F1 Score</h3>
+            <h2 id="f1Value">--</h2>
+            <p>Balance between precision and recall</p>
+        </div>
+
+    </div>
+
+    <div class="chart-card" style="margin-top: 20px;">
+
+        <h3>Confusion Matrix</h3>
+
+        <p>
+            Compare actual customer outcomes with model predictions.
+        </p>
+
+        <div class="chart-container">
+            <canvas id="confusionMatrixChart"></canvas>
+        </div>
+
+        <p id="evaluationInfo"></p>
+
+    </div>
+
+</section>
+
+
+        </main>
+
+        <footer>
+            <p>ChurnIQ · Customer Churn Prediction Project</p>
+            <p>Machine Learning Powered Analytics</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/frontend/charts.js"></script>
+<script src="/frontend/script.js"></script>
+</body>
+</html>
