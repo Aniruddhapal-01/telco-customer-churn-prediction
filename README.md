@@ -2,6 +2,11 @@
 
 An end-to-end Machine Learning application that predicts customer churn, analyzes customer behavior, and explains individual predictions using SHAP.
 
+
+## Live Demo
+
+🚀 [Click here to explore the deployed application](https://telco-customer-churn-prediction-as76.onrender.com/)
+
 ## Overview
 
 Customer churn is a major challenge for telecommunications companies. Losing existing customers can affect revenue and long-term business growth.
